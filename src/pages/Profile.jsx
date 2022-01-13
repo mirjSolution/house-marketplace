@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
+import SignIn from './SignIn';
 
 function Profile() {
   const [user, setUser] = useState(null);
