@@ -20,16 +20,15 @@ function OAuth() {
       const docRef = doc(db, 'users', user.uid);
       const docSnap = await getDoc(docRef);
 
-      // If user, doesn't exist
+      // If user, doesn't exist, create user
       if (!docSnap.exists()) {
         await setDoc(doc(db, 'users', user.uid), {
           name: user.displayName,
           email: user.email,
-          timeStamp: serverTimestamp(),
+          timestamp: serverTimestamp(),
         });
-
-        navigate('/');
       }
+      navigate('/');
     } catch (error) {
       toast.error('Could not authorize with Google');
     }
@@ -37,12 +36,10 @@ function OAuth() {
 
   return (
     <div className='socialLogin'>
-      <p>
-        Sign {location.pathname === '/sign-up' ? 'up' : 'in'} with{' '}
-        <button className='socialIconDiv' onClick={onGoogleClick}>
-          <img src={googleIcon} alt='google' className='socialIconImg' />
-        </button>
-      </p>
+      <p>Sign {location.pathname === '/sign-up' ? 'up' : 'in'} with </p>
+      <button className='socialIconDiv' onClick={onGoogleClick}>
+        <img className='socialIconImg' src={googleIcon} alt='google' />
+      </button>
     </div>
   );
 }
