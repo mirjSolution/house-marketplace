@@ -81,7 +81,7 @@ function Listing() {
         </p>
         <p className='listingLocation'>{listing.location}</p>
         <p className='listingType'>
-          For {listing.type === 'rent' ? 'Rent' : 'Sale'}
+          For {listing.type === 'rent' ? 'Rent' : 'Sell'}
         </p>
         {listing.offer && (
           <p className='discountPrice'>

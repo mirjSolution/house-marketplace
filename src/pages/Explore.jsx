@@ -22,13 +22,13 @@ function Explore() {
           />
           <p className='exploreCategoryName'>Places for rent</p>
         </Link>
-        <Link to='/category/sale'>
+        <Link to='/category/sell'>
           <img
             src={sellCategoryImage}
             alt='sell'
             className='exploreCategoryImg'
           />
-          <p className='exploreCategoryName'>Places for sale</p>
+          <p className='exploreCategoryName'>Places for sell</p>
         </Link>
       </div>
     </div>
